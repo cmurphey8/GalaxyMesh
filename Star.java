@@ -38,6 +38,7 @@ public class Star extends Body {
                 // The largest 20% of objects will become Black Holes
                 // The next 40% of objects will become Pulsars
                 // The remaining 40% (smallest 40% of objects) will become Neutron Stars
+                // HINT: check in on static variables that might help us here!
             }
             else {
                 newSize(NOVA_RATE);
