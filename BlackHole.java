@@ -23,20 +23,18 @@ public class BlackHole extends Body {
         newSize(0.5);        
     }
 
-    // attempt to eat neighbors after body force update
+    // TODO: attempt to eat neighbors after Body force update
     @Override
     public void updateF(Body obj, double G) {
         // call Body class force update
         super.updateF(obj, G);
 
-        // TODO:    if the distance from this black hole to the input object is 
-        // //          less than the radius of either object, eat the input object
-        if (calcDist(obj) < Math.max(size / 2, obj.size / 2)) {
-            eat(obj);
-        }
+        // TODO: if the distance from this black hole to input obj
+        //       is less than the radius of either object, eat obj
+
     }
 
-    // update fx & fy with the additive gravitational force from the input Body obj
+    // calculate distance between this object and input obj
     public double calcDist(Body obj) {
         double dx = obj.rx - rx;
         double dy = obj.ry - ry;
@@ -45,7 +43,7 @@ public class BlackHole extends Body {
 
     // blackhole eat process
     public void eat(Body obj) {
-        // TODO: update the removed status of the input Body object
+        // update the removed status of the input Body object
         obj.removed = true;
 
         // grow the size of this black hole by 0.1% the size of the the input Body object

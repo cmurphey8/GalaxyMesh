@@ -34,10 +34,7 @@ public class Star extends Body {
         // if supernova has started, grow image by scaling factor NOVA_RATE
         if (startNova) {
             if (novaCount == 10) {
-                // select new object type by updating image -- compare to maxSize scaled by NOVA_GROWTH (size at end of Nova)
-                if (size > 0.8 * maxSize * NOVA_GROWTH) newImage("blackhole.gif");
-                else if (size > 0.4 * maxSize * NOVA_GROWTH) newImage("pulsar.gif");
-                else newImage("neutron.gif");
+                // TODO: select new object type by updating image -- compare to maxSize scaled by NOVA_GROWTH (size at end of Nova)
             }
             else {
                 newSize(NOVA_RATE);

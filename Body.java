@@ -8,21 +8,22 @@ import java.util.Scanner;
 public class Body {
     public final double SCALE = 0.042;  // scalar for star size
 
-    protected double rx;      // x position
-    protected double ry;      // y position
-    private double vx;      // x velocity
-    private double vy;      // y velocity
+    protected double rx;        // x position
+    protected double ry;        // y position
 
-    protected double mass;    // mass
-    private String image;   // png image
-    protected double size;    // size
-    
-    private double fx;      // x force
-    private double fy;      // y force
+    protected double mass;      // mass
+    protected double size;      // size
 
-    protected double maxSize;
-    
+    protected double maxSize;   // max size any object can be - use for Nova selector
     protected boolean removed = false;    // removed status
+
+    private double vx;          // x velocity
+    private double vy;          // y velocity
+
+    private String image;       // png image
+    
+    private double fx;          // x force
+    private double fy;          // y force
 
 /**********************************************************************************
  *  Constructors        
@@ -40,8 +41,10 @@ public class Body {
         if (image.equals("blackhole.gif")) {
             size = SCALE * R;
         }
+        maxSize = SCALE * R;
     }
 
+    // create and (re)init a new object with inputs gathered from a Nova'd Star
     public Body(double[] arr, double R) {
         rx    = arr[0];
         ry    = arr[1];

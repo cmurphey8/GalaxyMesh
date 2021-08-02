@@ -28,18 +28,6 @@ public class Pulsar extends Body {
         super.step(dt);
 
         // TODO: update this Pulsar object's image from image to reverseImage every 10 steps
-        imageCount++;
-        if (imageCount == 10) {
-            
-            if (!imageRev) {
-                newImage("pulsarR.gif");
-                imageRev = true;
-            }
-            else {
-                newImage("pulsar.gif");
-                imageRev = false;
-            }
-            imageCount = 0;
-        }
+        
     }
 }
