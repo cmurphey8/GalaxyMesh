@@ -35,6 +35,9 @@ public class Star extends Body {
         if (startNova) {
             if (novaCount == 10) {
                 // TODO: select new object type by updating image -- compare to maxSize scaled by NOVA_GROWTH (size at end of Nova)
+                // The largest 20% of objects will become Black Holes
+                // The next 40% of objects will become Pulsars
+                // The remaining 40% (smallest 40% of objects) will become Neutron Stars
             }
             else {
                 newSize(NOVA_RATE);
